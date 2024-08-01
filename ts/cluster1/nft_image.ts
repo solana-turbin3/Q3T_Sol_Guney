@@ -16,13 +16,13 @@ umi.use(signerIdentity(signer));
 (async () => {
     try {
         //1. Load image
+        const image = await readFile("/home/devtex/CodeUbuntu/turbin3-starter/ts/cluster1/public/generug.png")
         //2. Convert image to generic file.
+        const file = createGenericFile(image, "turbin3-rug.png", {contentType: "image/png"});
         //3. Upload image
-
-        // const image = ???
-
-        // const [myUri] = ??? 
-        // console.log("Your image URI: ", myUri);
+        const [myUri] = await umi.uploader.upload([file]); 
+        //Console log the image URI
+        console.log("Your image URI: ", myUri);
     }
     catch(error) {
         console.log("Oops.. Something went wrong", error);

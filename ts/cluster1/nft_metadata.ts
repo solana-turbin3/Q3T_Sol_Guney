@@ -17,27 +17,27 @@ umi.use(signerIdentity(signer));
         // Follow this JSON structure
         // https://docs.metaplex.com/programs/token-metadata/changelog/v1.0#json-structure
 
-        // const image = ???
-        // const metadata = {
-        //     name: "?",
-        //     symbol: "?",
-        //     description: "?",
-        //     image: "?",
-        //     attributes: [
-        //         {trait_type: '?', value: '?'}
-        //     ],
-        //     properties: {
-        //         files: [
-        //             {
-        //                 type: "image/png",
-        //                 uri: "?"
-        //             },
-        //         ]
-        //     },
-        //     creators: []
-        // };
-        // const myUri = ???
-        // console.log("Your image URI: ", myUri);
+        const metadata = {
+            name: "Turbin3-Rug",
+            symbol: "TRUG",
+            description: "A very unique speacial very beatiful rug",
+            image: "https://arweave.net/gqp8pR3VhI04HgP0l7gnkoM8hvCzGqEKXfRr6fkRwSg",
+            attributes: [
+                {trait_type: 'background', value: 'white'},
+                {trait_type: 'side', value: 'blue'},
+            ],
+            properties: {
+                files: [
+                    {
+                        type: "image/png",
+                        uri: "https://arweave.net/gqp8pR3VhI04HgP0l7gnkoM8hvCzGqEKXfRr6fkRwSg"
+                    },
+                ]
+            },
+            creators: []
+        };
+        const myUri = await umi.uploader.uploadJson(metadata);
+        console.log("Your image URI: ", myUri);
     }
     catch(error) {
         console.log("Oops.. Something went wrong", error);

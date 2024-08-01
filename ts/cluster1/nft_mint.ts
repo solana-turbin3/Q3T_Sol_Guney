@@ -16,11 +16,18 @@ umi.use(mplTokenMetadata())
 const mint = generateSigner(umi);
 
 (async () => {
-    // let tx = ???
-    // let result = await tx.sendAndConfirm(umi);
-    // const signature = base58.encode(result.signature);
+    let tx = await createNft(umi, {
+        mint,
+        name: "Turbin3-Rug",
+        symbol: "TRUG",
+        uri: "https://arweave.net/1tDqI3581drL52OLGOfa6215ln11gkotXEvC0Q9YX_Q",
+        sellerFeeBasisPoints: percentAmount(5),
+    });
     
-    // console.log(`Succesfully Minted! Check out your TX here:\nhttps://explorer.solana.com/tx/${signature}?cluster=devnet`)
+    let result = await tx.sendAndConfirm(umi);
+    const signature = base58.encode(result.signature);
+    
+    console.log(`Succesfully Minted! Check out your TX here:\nhttps://explorer.solana.com/tx/${signature}?cluster=devnet`)
 
     console.log("Mint Address: ", mint.publicKey);
 })();
