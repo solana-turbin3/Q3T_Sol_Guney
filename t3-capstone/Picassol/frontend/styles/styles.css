@@ -1,0 +1,249 @@
+/* styles.css */
+
+/* Global styles for consistency */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.canvas-wrapper {
+  overflow: auto;
+  background-color: #2e2e2e;
+  padding: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 120px);
+}
+
+.table-fixed {
+  border-collapse: collapse;
+}
+
+td {
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  td {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+@media (min-width: 769px) {
+  td {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.cooldown {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cooldown span {
+  color: #ffc107;
+}
+
+.color-selector {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  background: linear-gradient(to bottom, #000000, #434343, #000000);
+  border-radius: 10px;
+  padding: 10px;
+  max-width: calc(100vw - 40px);
+}
+
+.color-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.color-button.selected {
+  border: 2px solid #ffffff;
+  transform: scale(1.2);
+}
+
+/* Navbar styling */
+.navbar {
+  width: 100%;
+  background-color: #1e1e1e;
+  padding: 10px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  cursor: pointer;
+  color: #ffc107;
+  margin-right: 20px;
+}
+
+.navbar .links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navbar .links a,
+.navbar .links button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.navbar .links a:hover,
+.navbar .links button:hover {
+  background-color: #2e2e2e;
+  color: #ffffff;
+}
+
+.navbar .wallet-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #ffc107;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #ffffff;
+  transition: border-color 0.3s;
+}
+
+.navbar .wallet-button:hover {
+  border-color: #ffffff;
+}
+
+/* Footer styling */
+.footer {
+  width: 100%;
+  background-color: #1e1e1e;
+  padding: 10px 30px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.footer .social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer .social-icons a {
+  margin: 0;
+}
+
+.footer .social-icons img {
+  height: 24px;
+  width: 24px;
+  transition: transform 0.3s;
+}
+
+.footer .social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.footer .links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer .links a {
+  color: #cccccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer .links a:hover {
+  color: #ffffff;
+}
+
+.footer .copyright {
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+/* Modal styles */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
